@@ -622,3 +622,22 @@ $(function () {
     });
 
 });
+
+/***************************
+
+    pagination
+
+***************************/
+document.querySelectorAll(".mil-pagination-btn").forEach(btn => {
+  btn.addEventListener("click", function(e) {
+    e.preventDefault(); // Prevent page reload if using #
+    
+    // Remove active class from all
+    document.querySelectorAll(".mil-pagination-btn").forEach(b => 
+      b.classList.remove("mil-active")
+    );
+    
+    // Add active class to the clicked one
+    this.classList.add("mil-active");
+  });
+});
